@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map'
 
 /*
@@ -17,14 +17,24 @@ export class AuthServiceProvider {
     this.token = currentUser && currentUser.token;
   }
 
-  public login(credentials: object): Observable<boolean> {
-    return this.http.post('http://155.158.2.29:4000/api/login', JSON.stringify(credentials))
+  public createOptions() {
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type','application/json');
+    return new RequestOptions({ headers });
+  }
+
+  public login(credentials: any): Observable<boolean> {
+    let options = this.createOptions();
+    return this.http.post('http://155.158.2.29:4000/api/login', JSON.stringify(credentials), options)
       .map((response: Response) => {
         let token = response.json() && response.json().token;
         if (token) {
           this.token = token;
-          console.log(token);
-          localStorage.setItem('currentUser', JSON.stringify(credentials));
+          localStorage.setItem('currentUser', JSON.stringify({
+            username: credentials.login,
+            token,
+          }));
           return true;
         } else {
           return false;

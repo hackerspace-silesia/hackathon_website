@@ -33,6 +33,7 @@ export class LoginPage {
       login: this.email,
       password: this.password
     };
+
     this.authService.login(credentials)
       .subscribe(result => {
         if(result === true) {
