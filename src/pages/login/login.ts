@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { HomePage } from "../home/home";
 
 /**
  * Generated class for the LoginPage page.
@@ -14,12 +16,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  email: string = '';
+  password: string = '';
+  error: string = ''
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private authService: AuthServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  doLogin(){
+    const credentials = {
+      login: this.email,
+      password: this.password
+    };
+    this.authService.login(credentials)
+      .subscribe(result => {
+        if(result === true) {
+          this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
+        } else {
+          this.error = 'Email lub hasło jest niepoprawne';
+        }
+      })
+
   }
 
 }

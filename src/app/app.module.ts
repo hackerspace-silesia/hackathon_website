@@ -11,6 +11,8 @@ import { RegisterPage } from "../pages/register/register";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from "../components/components.module";
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ComponentsModule } from "../components/components.module";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ComponentsModule
+    ComponentsModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,6 +40,7 @@ import { ComponentsModule } from "../components/components.module";
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AuthServiceProvider,
   ]
 })
 export class AppModule {}
