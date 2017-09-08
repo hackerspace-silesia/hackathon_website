@@ -16,7 +16,7 @@ export class RegisterFormComponent {
 
   constructor() {
     console.log('Hello RegisterFormComponent Component');
-    this.text = 'Hello World';
+    this.text = 'Register page';
   }
 
 }
