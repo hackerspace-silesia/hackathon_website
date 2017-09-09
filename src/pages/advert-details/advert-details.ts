@@ -27,6 +27,6 @@ export class AdvertDetailsPage {
     this.advert = this.navParams.data.advert;
     console.log(this.navParams.data);
     const avatar = this.navParams.get('advert').avatar;
-      this.imgUrl = avatar? `${this.url}${avatar.file_name}` : '';
+    this.imgUrl = avatar? `${this.url}${avatar.file_name}` : '';
   }
 }

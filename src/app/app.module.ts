@@ -21,6 +21,7 @@ import { HttpClientProvider } from '../providers/http-client/http-client';
 import { MainPipe } from "../pipes/main-pipe.module";
 import { AdvertDetailsPage } from "../pages/advert-details/advert-details";
 import { MyAdvertsPage } from "../pages/my-adverts/my-adverts";
+import { UsersServiceProvider } from '../providers/users-service/users-service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,6 @@ import { MyAdvertsPage } from "../pages/my-adverts/my-adverts";
     ComponentsModule,
     HttpModule,
     MainPipe,
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,6 +63,7 @@ import { MyAdvertsPage } from "../pages/my-adverts/my-adverts";
     AuthServiceProvider,
     AdvertsServiceProvider,
     HttpClientProvider,
+    UsersServiceProvider,
   ]
 })
 export class AppModule {}

@@ -48,7 +48,7 @@ export class NewAdvertPage {
       console.log(data.award.user_id);
       this.advertsService.createAdverts(data).subscribe(
         res => {
-          //this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
+          this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
         }, err => {
           console.log(err);
         }

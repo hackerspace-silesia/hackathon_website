@@ -3,16 +3,16 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Strona główna</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding text-center>
+<ion-content padding>
   <ion-searchbar (ionInput)="doSearch()" debounce="300"></ion-searchbar>
   <div class="jumbotron" >
-    <h4> Reklama </h4>
+    Najpopularniejsze:
   </div>
-  <ion-list>
+  <ion-list text-center>
     <adverts-list [adverts]="adverts"></adverts-list>
   </ion-list>
   <button ion-button>
