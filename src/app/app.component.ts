@@ -8,7 +8,9 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { LandingPage } from "../pages/landing/landing";
+import { AccountDetailsPage } from "../pages/account-details/account-details";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
+import {MyAdvertsPage} from "../pages/my-adverts/my-adverts";
 
 @Component({
   templateUrl: 'app.html'
@@ -40,8 +42,9 @@ export class MyApp {
     ];
 
     this.pagesWhenLogged = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
+      { title: 'Strona główna', component: HomePage },
+      { title: 'Szczegóły konta', component: AccountDetailsPage },
+      { title: 'Moje ogłoszenia', component: MyAdvertsPage },
     ];
   }
   initializeApp() {
