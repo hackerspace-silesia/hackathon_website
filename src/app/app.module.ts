@@ -14,6 +14,7 @@ import { ComponentsModule } from "../components/components.module";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from "@angular/http";
 import { LandingPage } from "../pages/landing/landing";
+import { AdvertServiceProvider } from "../providers/advert-service/advert-service";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LandingPage } from "../pages/landing/landing";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
+    AdvertServiceProvider
   ]
 })
 export class AppModule {}
