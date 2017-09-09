@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import { Observable } from "rxjs/Observable";
-import { Observer } from "rxjs/Observer";
-import { Advert } from "../../models/Advert";
 import { HttpClientProvider } from "../http-client/http-client";
-import {RequestOptions, Response} from "@angular/http";
+import {Observable} from "rxjs/Observable";
+import {Observer} from "rxjs/Observer";
 
 /*
   Generated class for the AdvertsServiceProvider provider.
@@ -18,26 +16,26 @@ export class AdvertsServiceProvider {
     console.log('Hello AdvertsServiceProvider Provider');
   }
 
-  getAllAdverts() {
-    this.http.get('http://155.158.2.29:4000/api/awards').subscribe(
-      res => {
-        console.log(res.data);
-        return res.data;
-      },
-      err => {
-        console.log(err);
-      }
-    )
+  getAllAdverts(): any {
+    return Observable.create((observer: Observer<Response>) => {
+      this.http.get('http://155.158.2.29:4000/api/awards').subscribe(
+        res => {
+          observer.next(res);
+          observer.complete();
+        },
+        err => {
+          observer.next(err);
+          observer.complete();
+        }
+      )
+    });
   }
 
   getAdvert(id: number){
     this.http.get('http://155.158.2.29:4000/api/awards', id).subscribe(
       res => {
-        console.log(res.data);
-        return res.data;
       },
       err => {
-        console.log(err);
         return err;
       }
     )
@@ -57,14 +55,17 @@ export class AdvertsServiceProvider {
   }
 
   public createAdverts(data: object) {
-    console.log(data);
-    this.http.post('http://155.158.2.29:4000/api/awards', JSON.stringify(data)).subscribe(
-      res => {
-        return res.data;
-      },
-      err => {
-        return err;
-      }
-    )
+    return Observable.create((observer: Observer<Response>) => {
+      this.http.post('http://155.158.2.29:4000/api/awards', JSON.stringify(data)).subscribe(
+        res => {
+          observer.next(res);
+          observer.complete();
+        },
+        err => {
+          observer.next(err);
+          observer.complete();
+        }
+      )
+    });
   }
 }

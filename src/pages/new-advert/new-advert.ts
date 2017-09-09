@@ -43,12 +43,16 @@ export class NewAdvertPage {
           city: this.city,
           value_from: this.value_from,
           value_to: this.value_to,
-          user_id: currentUser && currentUser.user_id
+          user_id: parseInt(currentUser.user_id)
         }
       };
-      const response = this.advertsService.createAdverts(data);
-      if(response) {
-        this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
-      }
+      console.log(data.award.user_id);
+      this.advertsService.createAdverts(data).subscribe(
+        res => {
+          //this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
+        }, err => {
+          console.log(err);
+        }
+      );
     }
 }
