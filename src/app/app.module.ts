@@ -14,6 +14,8 @@ import { ComponentsModule } from "../components/components.module";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from "@angular/http";
 import { LandingPage } from "../pages/landing/landing";
+import { TruncatePipe } from "../pipes/truncate/truncate";
+import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-service';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { LandingPage } from "../pages/landing/landing";
     LoginPage,
     RegisterPage,
     LandingPage,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { LandingPage } from "../pages/landing/landing";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
+    AdvertsServiceProvider,
   ]
 })
 export class AppModule {}
