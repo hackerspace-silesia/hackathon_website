@@ -22,32 +22,32 @@
         <ion-label>Email: </ion-label>
         <ion-input type="email"
                    [ngModel]="user.email"
-                   (input)="email = $event.target.value"
+                   (input)="user.email = $event.target.value"
                    name="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Imię: </ion-label>
         <ion-input type="text"
                    [ngModel]="user.name"
-                   (input)="firstName = $event.target.value"
+                   (input)="user.name = $event.target.value"
                    name="firstName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Nazwisko: </ion-label>
         <ion-input type="text"
                    [ngModel]="user.lastname"
-                   (input)="lastName = $event.target.value"
+                   (input)="user.lastname = $event.target.value"
                    name="lastName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Rola: </ion-label>
         <ion-input type="text"
                    [ngModel]="user.type"
-                   (input)="type = $event.target.value"
+                   (input)="user.type = $event.target.value"
                    name="lastName"></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button type="submit">
+    <button ion-button>
       Zapisz nowe dane
     </button>
   </form>

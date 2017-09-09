@@ -34,6 +34,7 @@ export class EditUserPage implements OnInit{
   }
 
   edit() {
+    console.log(this.user);
     this.userService.editUser({
       name: this.user.name,
       email: this.user.email,
@@ -45,8 +46,6 @@ export class EditUserPage implements OnInit{
       }, err => {
         this.error = 'Edycja się nie powiodła';
       }
-
     )
   }
-
 }

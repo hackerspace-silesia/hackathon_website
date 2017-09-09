@@ -14,9 +14,7 @@ import {HttpClientProvider} from "../http-client/http-client";
 @Injectable()
 export class UsersServiceProvider {
 
-  constructor(public http: HttpClientProvider) {
-
-  }
+  constructor(public http: HttpClientProvider) {}
   getUser(): any {
     const currentUser = JSON.parse(localStorage.getItem('currentUser')).user_id;
     return Observable.create((observer: Observer<Response>) => {
@@ -35,7 +33,9 @@ export class UsersServiceProvider {
   editUser(data): any {
     const currentUser = JSON.parse(localStorage.getItem('currentUser')).user_id;
     return Observable.create((observer: Observer<Response>) => {
-      this.http.put(`http://155.158.2.29:4000/api/users/${currentUser}`, data).subscribe(
+      this.http.put(`http://155.158.2.29:4000/api/users/${currentUser}`, {
+        user: data,
+      }).subscribe(
         res => {
           observer.next(res);
           observer.complete();

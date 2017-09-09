@@ -16,9 +16,7 @@ import { AdvertDetailsPage } from "../../pages/advert-details/advert-details";
 export class AdvertComponent {
   @Input() advert: Advert;
 
-  constructor(private navController: NavController) {
-
-  }
+  constructor(private navController: NavController) {}
 
   viewDetails() {
     this.navController.push(AdvertDetailsPage, { advert: this.advert }, {animate: true, direction: 'forward'});

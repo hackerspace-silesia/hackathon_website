@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -13,20 +13,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-advert-details',
   templateUrl: 'advert-details.html',
 })
-export class AdvertDetailsPage {
+export class AdvertDetailsPage implements OnInit{
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  }
   advert: object = {};
   url: string = 'http://155.158.2.29:4000/uploads/';
   imgUrl;
 
-  ionViewDidLoad() {
+  ngOnInit() {
     this.advert = this.navParams.data.advert;
     console.log(this.navParams.data);
     const avatar = this.navParams.get('advert').avatar;
     this.imgUrl = avatar? `${this.url}${avatar.file_name}` : '';
   }
+
 }

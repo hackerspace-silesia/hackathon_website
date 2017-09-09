@@ -14,11 +14,15 @@
       <ion-list>
         <ion-item>
           <ion-label>Email:</ion-label>
-          <ion-input type="email" [ngModel]="email" (input)="email = $event.target.value" name="email"></ion-input>
+          <ion-input type="email" [ngModel]="email"
+                     (input)="email = $event.target.value"
+                     name="email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Hasło:</ion-label>
-          <ion-input type="password" [ngModel]="password" (input)="password = $event.target.value" name="password"></ion-input>
+          <ion-input type="password" [ngModel]="password"
+                     (input)="password = $event.target.value"
+                     name="password"></ion-input>
         </ion-item>
         <div *ngIf="error" class="alert alert-danger" role="alert">
           {{ error }}
