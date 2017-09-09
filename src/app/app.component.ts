@@ -16,7 +16,7 @@ import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LandingPage;
+  rootPage: any = LoginPage;
   pages: Array<{title: string, component: any}>;
   pagesWhenLogged: Array<{title: string, component: any}>;
 
@@ -26,9 +26,12 @@ export class MyApp {
               public authService: AuthServiceProvider) {
     if(this.authService.checkIsLogged()){
       this.rootPage = HomePage;
+    } else {
+      if (!localStorage.getItem('settings')) {
+        this.rootPage = LandingPage;
+      }
     }
     this.initializeApp();
-
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Login', component: LoginPage },
