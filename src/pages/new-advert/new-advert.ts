@@ -63,7 +63,7 @@ export class NewAdvertPage {
     return Promise.resolve(_param)
     .then(url => {
       this.imgUrl = _param;
-      let file = this.dataURLtoFile(_param, 'test');
+      let file = this.dataURLtoFile(_param, `${Date.now()}.jpg`);
       this.img = file;
     });
   }
