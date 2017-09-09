@@ -14,19 +14,18 @@ import { AdvertsServiceProvider } from "../../providers/adverts-service/adverts-
 })
 export class AdvertsListComponent implements OnInit{
 
-  adverts: Advert[] = [
-    {id: 11, subject: 'Lodówka', topic: 'Sprzedam lodówkę'},
-    {id: 12, subject: 'Pralka', topic: 'Sprzedam pralkę'},
-    {id: 13, subject: 'Kilo płodu', topic: 'Kupię kilo płodu'},
-  ];
-
+  adverts: Advert[];
+  error: any;
   constructor(private advertsService: AdvertsServiceProvider) {
 
   }
   ngOnInit() {
     this.advertsService.getAllAdverts().subscribe(
       res => {
-        const adwerts = JSON.parse(res._body).data;
+        this.adverts = JSON.parse(res._body).data;
+      },
+      err => {
+        this.error = err;
       }
     );
   }
