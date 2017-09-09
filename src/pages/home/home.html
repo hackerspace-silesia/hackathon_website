@@ -8,14 +8,7 @@
 </ion-header>
 
 <ion-content padding text-center>
-  <form (ngSubmit)="doSearch()">
-    <ion-list>
-      <ion-item>
-        <ion-label>Szukaj:</ion-label>
-        <ion-input type="text" [ngModel]="search" (input)="search = $event.target.value" name="password"></ion-input>
-      </ion-item>
-    </ion-list>
-  </form>
+  <ion-searchbar (ionInput)="doSearch()"></ion-searchbar>
   <div class="jumbotron" >
     <h4> Reklama </h4>
   </div>
