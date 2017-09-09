@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from "../components/components.module";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from "@angular/http";
+import {RegisterPageModule} from "../pages/register/register.module";
 
 @NgModule({
   declarations: [
@@ -20,13 +21,13 @@ import { HttpModule } from "@angular/http";
     HomePage,
     ListPage,
     LoginPage,
-    RegisterPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
-    HttpModule
+    HttpModule,
+    RegisterPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +35,6 @@ import { HttpModule } from "@angular/http";
     HomePage,
     ListPage,
     LoginPage,
-    RegisterPage
   ],
   providers: [
     StatusBar,

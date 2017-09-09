@@ -31,6 +31,15 @@ export class AuthServiceProvider {
         }
       });
   }
+  public register(credentials: object): Observable<boolean> {
+    console.log(credentials);
+    return this.http.post('http://155.158.2.29:4000/api/users', credentials)
+      .map((response: Response) => {
+        if(response.status === 201) {
+          return true;
+        }
+      });
+  }
 
   logout(): void {
     // clear token remove user from local storage to log user out
