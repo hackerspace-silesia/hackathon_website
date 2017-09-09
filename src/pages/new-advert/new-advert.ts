@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {AdvertsServiceProvider} from "../../providers/adverts-service/adverts-service";
-import {HomePage} from "../home/home";
+import { AdvertsServiceProvider } from "../../providers/adverts-service/adverts-service";
+import { HomePage } from "../home/home";
 
 /**
  * Generated class for the NewAdvertPage page.
