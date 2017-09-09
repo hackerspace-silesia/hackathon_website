@@ -40,10 +40,10 @@
         <ion-label>Miasto</ion-label>
         <ion-input type="text" [ngModel]="city" (input)="city = $event.target.value" name="city"></ion-input>
       </ion-item>
-      <ion-item *ngIf="img">
+      <ion-item *ngIf="imgUrl">
         <ion-label>Zdjęcie</ion-label>
         <ion-thumbnail item-end>
-          <img [src]="domSanitizer.bypassSecurityTrustUrl(img)" alt="obrazek">
+          <img [src]="domSanitizer.bypassSecurityTrustUrl(imgUrl)" alt="obrazek">
         </ion-thumbnail>
       </ion-item>
       <ion-item>

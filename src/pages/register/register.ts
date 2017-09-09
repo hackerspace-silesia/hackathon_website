@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import validator from 'validator';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { HomePage } from "../home/home";

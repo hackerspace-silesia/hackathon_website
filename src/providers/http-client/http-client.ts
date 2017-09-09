@@ -19,7 +19,11 @@ export class HttpClientProvider {
   private createOptions(opt?) {
     const token = JSON.parse(localStorage.getItem('currentUser')).token;
     this.headers.set('Authorization', `Bearer ${token}`);
-    this.headers.set('Content-Type', 'application/json');
+    // if(!opt) {
+    //   this.headers.set('Content-type', 'application/json');
+    // } else {
+    //   this.headers.set(opt.name, opt.value);
+    // }
     let options;
     if (opt) {
       let params: URLSearchParams = new URLSearchParams();
@@ -53,9 +57,9 @@ export class HttpClientProvider {
     });
   }
 
-  post(url, data) {
+  post(url, data, options?) {
     return Observable.create((observer: Observer<Response>) => {
-      this.http.post(url, data, this.createOptions()).subscribe
+      this.http.post(url, data, this.createOptions(options)).subscribe
       ((response) => {
         this.responseSuccess(observer, response)
       }, (error) => {

@@ -28,6 +28,7 @@ export class NewAdvertPage {
   error: string = '';
   avatar: File = null;
   img: any;
+  imgUrl: any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -41,16 +42,14 @@ export class NewAdvertPage {
   createAdvert() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const data = {
-      award: {
         topic: this.topic,
         city: this.city,
         value_from: this.value_from,
         value_to: this.value_to,
         user_id: parseInt(currentUser.user_id),
         avatar: this.img
-      }
     };
-    console.log(data.award.user_id);
+    console.log(data)
     this.advertsService.createAdverts(data).subscribe(
       res => {
         this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
@@ -63,6 +62,7 @@ export class NewAdvertPage {
   popCallback = (_param) => {
     return Promise.resolve(_param)
     .then(url => {
+      this.imgUrl = _param;
       let file = this.dataURLtoFile(_param, 'test');
       this.img = file;
     });
