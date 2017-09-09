@@ -38,15 +38,22 @@ export class AdvertsServiceProvider {
       },
       err => {
         console.log(err);
+        return err;
       }
     )
   }
 
-  public searchAdverts(data: any): Observable<boolean> {
-    return this.http.post('http://155.158.2.29:4000/api/something', JSON.stringify(data),)
-      .map((response: Response) => {
-        return true;
-      });
+  public searchAdverts(data: any) {
+    this.http.post('http://155.158.2.29:4000/api/something', JSON.stringify(data)).subscribe(
+      res => {
+        console.log(res.data);
+        return res.data;
+      },
+      err => {
+        console.log(err);
+        return err;
+      }
+    )
   }
 
 }
