@@ -64,13 +64,17 @@ export class AdvertDetailsPage implements OnInit{
         award_id: this.award_id
       }
     };
-    this.advertsService.newComment(data,this.award_id).subscribe(
-      res => {
-        this.comments.unshift(JSON.parse(res._body).data);
-      },
-      err => {
-        this.error = err;
-      }
-    )
+    if(this.author && this.commentMessage) {
+      this.advertsService.newComment(data,this.award_id).subscribe(
+        res => {
+          this.commentMessage = '';
+          this.comments.unshift(JSON.parse(res._body).data);
+        },
+        err => {
+          this.error = err;
+        }
+      )
+    }
+
   }
 }
