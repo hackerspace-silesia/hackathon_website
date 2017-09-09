@@ -19,7 +19,7 @@ export class AuthServiceProvider {
 
   public createOptions() {
     let headers = new Headers();
-    headers.append('Access-Control-Allow-Origin', '*');
+    // headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Content-Type','application/json');
     return new RequestOptions({ headers });
   }
@@ -47,4 +47,17 @@ export class AuthServiceProvider {
     this.token = null;
     localStorage.removeItem('currentUser');
   }
+
+  getUserFromStorage() {
+    return localStorage.getItem('currentUser');
+  };
+
+  checkIsLogged() {
+    const currentUser = this.getUserFromStorage();
+    if (currentUser) {
+      return true;
+    }
+    return false;
+  };
+
 }

@@ -18,7 +18,7 @@ import { HomePage } from "../home/home";
 export class LoginPage {
   email: string = '';
   password: string = '';
-  error: string = ''
+  error: string;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -28,12 +28,11 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  doLogin(){
+  doLogin() {
     const credentials = {
       login: this.email,
       password: this.password
     };
-
     this.authService.login(credentials)
       .subscribe(result => {
         if(result === true) {
@@ -42,7 +41,6 @@ export class LoginPage {
           this.error = 'Email lub hasło jest niepoprawne';
         }
       })
-
   }
 
 }
