@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from "../components/components.module";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from "@angular/http";
+import { LandingPage } from "../pages/landing/landing";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpModule } from "@angular/http";
     HomePage,
     ListPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    LandingPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { HttpModule } from "@angular/http";
     HomePage,
     ListPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    LandingPage
   ],
   providers: [
     StatusBar,

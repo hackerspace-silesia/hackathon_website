@@ -35,6 +35,9 @@ export class AuthServiceProvider {
             username: credentials.login,
             token,
           }));
+          localStorage.setItem('settings', JSON.stringify( {
+            firstLaunch: false,
+          }));
           return true;
         } else {
           return false;
@@ -48,16 +51,11 @@ export class AuthServiceProvider {
     localStorage.removeItem('currentUser');
   }
 
-  getUserFromStorage() {
+  checkIsLogged() {
     return localStorage.getItem('currentUser');
   };
 
-  checkIsLogged() {
-    const currentUser = this.getUserFromStorage();
-    if (currentUser) {
-      return true;
-    }
-    return false;
-  };
-
+  getSettingsFromStorage() {
+    return localStorage.getItem('settings');
+  }
 }
