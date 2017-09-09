@@ -1,5 +1,7 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Advert } from '../../models/Advert';
+import { NavController } from "ionic-angular";
+import { AdvertDetailsPage } from "../../pages/advert-details/advert-details";
 
 /**
  * Generated class for the AdvertComponent component.
@@ -14,8 +16,12 @@ import { Advert } from '../../models/Advert';
 export class AdvertComponent {
   @Input() advert: Advert;
 
-  constructor() {
+  constructor(private navController: NavController) {
 
+  }
+
+  viewDetails() {
+    this.navController.push(AdvertDetailsPage, { advert: this.advert }, {animate: true, direction: 'forward'});
   }
 
 }

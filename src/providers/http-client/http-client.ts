@@ -18,8 +18,8 @@ export class HttpClientProvider {
 
   private createOptions(ID?) {
     const token = JSON.parse(localStorage.getItem('currentUser')).token;
-    this.headers.append('Authorization', `Bearer ${token}`);
-    this.headers.append('Content-Type', 'application/json')
+    this.headers.set('Authorization', `Bearer ${token}`);
+    this.headers.set('Content-Type', 'application/json')
     let options;
     if(ID) {
       let params: URLSearchParams = new URLSearchParams();

@@ -26,9 +26,6 @@ export class LoginPage {
               private authService: AuthServiceProvider) {
   }
 
-  ionViewDidLoad() {
-
-  }
   doLogin() {
     const credentials = {
       login: this.email,
