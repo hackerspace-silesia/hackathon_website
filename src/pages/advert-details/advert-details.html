@@ -20,7 +20,7 @@
     </ion-card-header>
     <ion-card-content>
       <div class="col-md-6">
-        <h3> Treść:{{ advert.body }} </h3>
+        <h3> Treść: {{ advert.body }} </h3>
         <p> Liczba wyświetleń: {{ advert.view_count }} </p>
       </div>
       <div class="col-md-6">
@@ -28,5 +28,27 @@
       </div>
     </ion-card-content>
   </ion-card>
+  <comments-list></comments-list>
+  <form (ngSubmit)="createComment()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Treść:</ion-label>
+        <ion-textarea [ngModel]="commentMessage" (input)="commentMessage = $event.target.value" name="commentMessage"></ion-textarea>
+      </ion-item>
+      <div *ngIf="error" class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    </ion-list>
+    <div>
+      <button ion-button>
+        Dodaj Komentarz
+      </button>
+    </div>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let comment of comments">
+        {{comment.author}}: &nbsp;{{comment.title}}
+    </ion-item>
+  </ion-list>
 </ion-content>
 

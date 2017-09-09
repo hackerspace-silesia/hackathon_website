@@ -32,11 +32,11 @@
         <ion-input type="number" [ngModel]="value_to" (input)="value_to = $event.target.value" name="value_to"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Miasto</ion-label>
+        <ion-label>Miasto:</ion-label>
         <ion-input type="text" [ngModel]="city" (input)="city = $event.target.value" name="city"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Plik</ion-label>
+        <ion-label>Plik:</ion-label>
         <ion-input type="file" [ngModel]="avatar" (input)="avatar = $event.target.value" name="avatar"></ion-input>
       </ion-item>
       <div *ngIf="error" class="alert alert-danger" role="alert">

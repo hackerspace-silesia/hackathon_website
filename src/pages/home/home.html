@@ -8,13 +8,8 @@
 </ion-header>
 <ion-content padding>
   <ion-searchbar (ionInput)="doSearch()" debounce="300"></ion-searchbar>
-  <div class="jumbotron" >
-    Najpopularniejsze:
-  </div>
+  <p> <ion-icon name="star"></ion-icon> Najpopularniejsze: </p>
   <ion-list text-center>
     <adverts-list [adverts]="adverts"></adverts-list>
   </ion-list>
-  <button ion-button>
-    Skontaktuj się z nami!
-  </button>
 </ion-content>

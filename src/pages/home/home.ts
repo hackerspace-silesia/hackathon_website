@@ -25,7 +25,7 @@ export class HomePage implements OnInit{
   ngOnInit() {
     this.advertsService.getAllAdverts().subscribe(
       res => {
-        this.adverts = JSON.parse(res._body).data;
+        this.adverts = JSON.parse(res._body).data.slice(0, 5);
       },
       err => {
         this.error = err;

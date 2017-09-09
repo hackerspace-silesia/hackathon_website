@@ -3,6 +3,7 @@ import 'rxjs/add/operator/map';
 import { HttpClientProvider } from "../http-client/http-client";
 import { Observable } from "rxjs/Observable";
 import { Observer } from "rxjs/Observer";
+import { Comment } from "../../models/Comment";
 
 /*
   Generated class for the AdvertsServiceProvider provider.
@@ -12,9 +13,7 @@ import { Observer } from "rxjs/Observer";
 @Injectable()
 export class AdvertsServiceProvider {
 
-  constructor(public http: HttpClientProvider) {
-
-  }
+  constructor(public http: HttpClientProvider) {}
 
   getAllAdverts(): any {
     return Observable.create((observer: Observer<Response>) => {
@@ -75,6 +74,36 @@ export class AdvertsServiceProvider {
           observer.complete();
         }
       )
+    });
+  }
+
+  public getAllComments(data: number) {
+    return Observable.create((observer: Observer<Response>) => {
+      this.http.get('http://155.158.2.29:4000/api/awards/'+data+'/comments').subscribe(
+        res => {
+          observer.next(res);
+          observer.complete();
+        },
+        err => {
+          observer.next(err);
+          observer.complete();
+        }
+      )
+    });
+  }
+
+  public newComment(data: object, award_id: number) {
+    return Observable.create((observer: Observer<Response>) => {
+      this.http.post(`http://155.158.2.29:4000/api/awards/${award_id}/comments`, data).subscribe(
+        res => {
+          observer.next(res);
+          observer.complete();
+        },
+        err => {
+          observer.next(err);
+          observer.complete();
+        }
+      );
     });
   }
 }
