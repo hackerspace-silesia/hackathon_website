@@ -33,7 +33,7 @@ export class HttpClientProvider {
   }
 
   private responseSuccess(observer: Observer<any>, response: Response) {
-    observer.next(response.json());
+    observer.next(response);
     observer.complete();
   }
 
