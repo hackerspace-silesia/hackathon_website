@@ -32,6 +32,7 @@ export class AdvertsServiceProvider {
   getAdvert(id: number){
     this.http.get('http://155.158.2.29:4000/api/awards', id).subscribe(
       res => {
+        console.log(res.data);
         return res.data;
       },
       err => {

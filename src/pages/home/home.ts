@@ -12,6 +12,6 @@ export class HomePage {
   }
 
   test() {
-    this.advertsService.getAllAdverts();
+    this.advertsService.getAdvert(1);
   }
 }
