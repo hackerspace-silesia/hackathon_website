@@ -9,6 +9,7 @@ import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { AccountDetailsPage } from "../pages/account-details/account-details";
 import { NewAdvertPage } from "../pages/new-advert/new-advert";
+import { EditUserPage } from "../pages/edit-user/edit-user";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,7 +35,8 @@ import { UsersServiceProvider } from '../providers/users-service/users-service';
     AdvertDetailsPage,
     AccountDetailsPage,
     MyAdvertsPage,
-    NewAdvertPage
+    NewAdvertPage,
+    EditUserPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { UsersServiceProvider } from '../providers/users-service/users-service';
     AdvertDetailsPage,
     AccountDetailsPage,
     MyAdvertsPage,
-    NewAdvertPage
+    NewAdvertPage,
+    EditUserPage
   ],
   providers: [
     StatusBar,

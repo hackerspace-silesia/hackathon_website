@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersServiceProvider } from "../../providers/users-service/users-service";
 import { User } from "../../models/User";
+import {EditUserPage} from "../edit-user/edit-user";
 /**
  * Generated class for the AccountDetailsPage page.
  *
@@ -16,11 +17,9 @@ import { User } from "../../models/User";
 })
 export class AccountDetailsPage implements OnInit{
   user: User = {
-    id: 0,
     email: '',
     name: '',
     lastname: '',
-    status: 0,
     type: '',
   };
 
@@ -33,13 +32,14 @@ export class AccountDetailsPage implements OnInit{
     this.userService.getUser().subscribe(
       res => {
         this.user = JSON.parse(res._body).data;
-        console.log(this.user);
       },
       err => {
         console.log(err);
       }
     );
   }
-
+  viewEditPage() {
+    this.navCtrl.push(EditUserPage, { user: this.user }, {animate: true, direction: 'forward'});
+  }
 
 }

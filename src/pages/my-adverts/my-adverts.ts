@@ -23,9 +23,6 @@ export class MyAdvertsPage implements OnInit{
               private advertsService: AdvertsServiceProvider ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyAdvertsPage');
-  }
   ngOnInit() {
     this.advertsService.getUserAdverts().subscribe(
       res => {
