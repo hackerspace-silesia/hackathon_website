@@ -17,6 +17,7 @@ import { LandingPage } from "../pages/landing/landing";
 import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-service';
 import { HttpClientProvider } from '../providers/http-client/http-client';
 import { MainPipe } from "../pipes/main-pipe.module";
+import {AdvertDetailsPage} from "../pages/advert-details/advert-details";
 
 @NgModule({
   declarations: [
@@ -26,13 +27,15 @@ import { MainPipe } from "../pipes/main-pipe.module";
     LoginPage,
     RegisterPage,
     LandingPage,
+    AdvertDetailsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     HttpModule,
-    MainPipe
+    MainPipe,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,7 +44,8 @@ import { MainPipe } from "../pipes/main-pipe.module";
     ListPage,
     LoginPage,
     RegisterPage,
-    LandingPage
+    LandingPage,
+    AdvertDetailsPage
   ],
   providers: [
     StatusBar,
