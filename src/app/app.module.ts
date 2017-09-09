@@ -14,8 +14,9 @@ import { ComponentsModule } from "../components/components.module";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from "@angular/http";
 import { LandingPage } from "../pages/landing/landing";
-import { TruncatePipe } from "../pipes/truncate/truncate";
 import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-service';
+import { HttpClientProvider } from '../providers/http-client/http-client';
+import { MainPipe } from "../pipes/main-pipe.module";
 
 @NgModule({
   declarations: [
@@ -25,13 +26,13 @@ import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-ser
     LoginPage,
     RegisterPage,
     LandingPage,
-    TruncatePipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     HttpModule,
+    MainPipe
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,6 +49,7 @@ import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-ser
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
     AdvertsServiceProvider,
+    HttpClientProvider,
   ]
 })
 export class AppModule {}
