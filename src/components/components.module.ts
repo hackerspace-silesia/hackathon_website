@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from "ionic-angular";
+import { AdvertComponent } from './advert/advert';
 
 @NgModule({
-	declarations: [],
+	declarations: [AdvertComponent],
 	imports: [IonicModule],
-	exports: []
+	exports: [AdvertComponent]
 })
 export class ComponentsModule {}

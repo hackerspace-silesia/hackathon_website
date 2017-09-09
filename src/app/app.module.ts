@@ -22,7 +22,7 @@ import { LandingPage } from "../pages/landing/landing";
     ListPage,
     LoginPage,
     RegisterPage,
-    LandingPage
+    LandingPage,
   ],
   imports: [
     BrowserModule,
