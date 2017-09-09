@@ -17,6 +17,7 @@ export class MyApp {
 
   rootPage: any = LoginPage;
   pages: Array<{title: string, component: any}>;
+  pagesWhenLogged: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
@@ -29,12 +30,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage },
       { title: 'Register', component: RegisterPage }
     ];
 
+    this.pagesWhenLogged = [
+      { title: 'Home', component: HomePage },
+      { title: 'List', component: ListPage },
+    ];
   }
 
   initializeApp() {
@@ -49,6 +52,10 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    if(this.authService.checkIsLogged()) {
+      this.nav.setRoot(page.component);
+    } else {
+      this.nav.setRoot(LoginPage);
+    }
   }
 }
