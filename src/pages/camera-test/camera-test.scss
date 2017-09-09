@@ -1,0 +1,15 @@
+page-camera-test {
+
+  .button-camera {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    background-color: rgba(255, 255, 255, .5);
+    border: 4px solid #ffffff;
+  }
+
+}

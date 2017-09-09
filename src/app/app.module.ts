@@ -15,6 +15,8 @@ import { HttpModule } from "@angular/http";
 import { LandingPage } from "../pages/landing/landing";
 import { ExplorePage } from "../pages/explore/explore";
 
+import { CameraTestPage } from "../pages/camera-test/camera-test";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,7 +24,8 @@ import { ExplorePage } from "../pages/explore/explore";
     LoginPage,
     RegisterPage,
     LandingPage,
-    ExplorePage
+    ExplorePage,
+    CameraTestPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { ExplorePage } from "../pages/explore/explore";
     LoginPage,
     RegisterPage,
     LandingPage,
-    ExplorePage
+    ExplorePage,
+    CameraTestPage
   ],
   providers: [
     StatusBar,

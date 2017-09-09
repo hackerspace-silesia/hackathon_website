@@ -9,6 +9,7 @@ import { RegisterPage } from "../pages/register/register";
 import { LandingPage } from "../pages/landing/landing";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import { ExplorePage } from "../pages/explore/explore";
+import { CameraTestPage } from "../pages/camera-test/camera-test";
 
 @Component({
   templateUrl: 'app.html'
@@ -42,6 +43,7 @@ export class MyApp {
     this.pagesWhenLogged = [
       { title: 'Home', component: HomePage },
       { title: 'ExplorePage', component: ExplorePage },
+      {title: 'Camera test', component: CameraTestPage}
     ];
   }
   initializeApp() {
