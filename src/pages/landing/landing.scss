@@ -1,22 +1,14 @@
 page-landing {
-  .main-header {
-    font-size: 3rem;
+
+  .bg {
+    background: linear-gradient(45deg, #36D1DC, #5B86E5);
+    color: #ffffff;
   }
 
   .content-wrapper {
-    background: url('../../assets/img/02.jpg') right center no-repeat;
-    background-size: cover;
-    color: #ffffff;
-  }
-
-  .logo {
-    max-height: 8rem;
-  }
-
-  .banner {
-    height: 128px;
-    background-color: grey;
-    color: #ffffff;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
 }
