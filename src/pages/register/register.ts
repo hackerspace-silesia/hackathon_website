@@ -22,6 +22,7 @@ export class RegisterPage {
   firstName: string = '';
   lastName: string = '';
   email: string = '';
+  registerSuccess: boolean = false;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -45,19 +46,14 @@ export class RegisterPage {
     this.authService.register(credentials)
       .subscribe(result => {
         if(result === true) {
-          this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
+          this.registerSuccess = true;
+          this.password = '';
+          this.firstName = '';
+          this.lastName = '';
+          this.email = '';
         } else {
           this.error = 'Email lub hasło jest niepoprawne';
         }
       })
-  }
-
-  showAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'Rejestracja pomyślna',
-      subTitle: 'Twoje konto zostało utworzone. Zostanie aktywowane do 24 godzin.',
-      buttons: ['OK']
-    });
-    alert.present();
   }
 }

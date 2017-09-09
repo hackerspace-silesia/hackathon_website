@@ -20,6 +20,9 @@
           <ion-label>Hasło</ion-label>
           <ion-input type="password" [ngModel]="password" (input)="password = $event.target.value" name="password"></ion-input>
         </ion-item>
+        <div *ngIf="error" class="alert alert-danger" role="alert">
+          {{ error }}
+        </div>
       </ion-list>
       <button ion-button type="submit">
         Zaloguj się
