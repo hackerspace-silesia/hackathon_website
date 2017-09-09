@@ -64,5 +64,5 @@ export class MyApp {
   logout() {
     this.authService.logout();
     this.nav.setRoot(LoginPage, {}, { animate: true });
-  }
+    }
 }

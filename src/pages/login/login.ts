@@ -21,7 +21,6 @@ export class LoginPage {
   password: string = '';
   error: string;
   registerPage = RegisterPage;
-
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private authService: AuthServiceProvider) {

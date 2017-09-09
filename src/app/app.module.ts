@@ -28,7 +28,7 @@ import { LandingPage } from "../pages/landing/landing";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
-    HttpModule
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
