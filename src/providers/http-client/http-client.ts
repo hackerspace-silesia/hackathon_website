@@ -55,7 +55,7 @@ export class HttpClientProvider {
 
   post(url, data) {
     return Observable.create((observer: Observer<Response>) => {
-      this.http.post(url, data).subscribe
+      this.http.post(url, data, this.createOptions()).subscribe
       ((response) => {
         this.responseSuccess(observer, response)
       }, (error) => {

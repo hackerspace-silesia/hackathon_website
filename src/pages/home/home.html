@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding text-center>
+  <ion-searchbar (ionInput)="doSearch()" debounce="300"></ion-searchbar>
   <div class="jumbotron" >
     <h4> Reklama </h4>
   </div>
@@ -20,8 +21,5 @@
   </ion-list>
   <button ion-button>
     Skontaktuj się z nami!
-  </button>
-  <button ion-button (click)="test()">
-    Test button
   </button>
 </ion-content>

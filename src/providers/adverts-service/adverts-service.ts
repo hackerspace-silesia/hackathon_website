@@ -4,6 +4,7 @@ import { Observable } from "rxjs/Observable";
 import { Observer } from "rxjs/Observer";
 import { Advert } from "../../models/Advert";
 import { HttpClientProvider } from "../http-client/http-client";
+import {RequestOptions, Response} from "@angular/http";
 
 /*
   Generated class for the AdvertsServiceProvider provider.
@@ -39,6 +40,13 @@ export class AdvertsServiceProvider {
         console.log(err);
       }
     )
+  }
+
+  public searchAdverts(data: any): Observable<boolean> {
+    return this.http.post('http://155.158.2.29:4000/api/something', JSON.stringify(data),)
+      .map((response: Response) => {
+        return true;
+      });
   }
 
 }
