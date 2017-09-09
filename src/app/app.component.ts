@@ -11,6 +11,7 @@ import { LandingPage } from "../pages/landing/landing";
 import { AccountDetailsPage } from "../pages/account-details/account-details";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import {MyAdvertsPage} from "../pages/my-adverts/my-adverts";
+import {NewAdvertPage} from "../pages/new-advert/new-advert";
 
 @Component({
   templateUrl: 'app.html'
@@ -43,6 +44,7 @@ export class MyApp {
 
     this.pagesWhenLogged = [
       { title: 'Strona główna', component: HomePage },
+      { title: 'Dodaj nowe ogłoszenie', component: NewAdvertPage },
       { title: 'Szczegóły konta', component: AccountDetailsPage },
       { title: 'Moje ogłoszenia', component: MyAdvertsPage },
     ];

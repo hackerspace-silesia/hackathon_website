@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { AccountDetailsPage } from "../pages/account-details/account-details";
+import { NewAdvertPage } from "../pages/new-advert/new-advert";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,8 +19,8 @@ import { LandingPage } from "../pages/landing/landing";
 import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-service';
 import { HttpClientProvider } from '../providers/http-client/http-client';
 import { MainPipe } from "../pipes/main-pipe.module";
-import {AdvertDetailsPage} from "../pages/advert-details/advert-details";
-import {MyAdvertsPage} from "../pages/my-adverts/my-adverts";
+import { AdvertDetailsPage } from "../pages/advert-details/advert-details";
+import { MyAdvertsPage } from "../pages/my-adverts/my-adverts";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MyAdvertsPage} from "../pages/my-adverts/my-adverts";
     LandingPage,
     AdvertDetailsPage,
     AccountDetailsPage,
-    MyAdvertsPage
+    MyAdvertsPage,
+    NewAdvertPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import {MyAdvertsPage} from "../pages/my-adverts/my-adverts";
     LandingPage,
     AdvertDetailsPage,
     AccountDetailsPage,
-    MyAdvertsPage
+    MyAdvertsPage,
+    NewAdvertPage
   ],
   providers: [
     StatusBar,

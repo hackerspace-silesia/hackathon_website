@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpClientProvider } from "../http-client/http-client";
-import {Observable} from "rxjs/Observable";
-import {Observer} from "rxjs/Observer";
+import { Observable } from "rxjs/Observable";
+import { Observer } from "rxjs/Observer";
 
 /*
   Generated class for the AdvertsServiceProvider provider.
@@ -13,7 +13,7 @@ import {Observer} from "rxjs/Observer";
 export class AdvertsServiceProvider {
 
   constructor(public http: HttpClientProvider) {
-    console.log('Hello AdvertsServiceProvider Provider');
+
   }
 
   getAllAdverts(): any {
@@ -31,14 +31,23 @@ export class AdvertsServiceProvider {
     });
   }
 
-  getAdvert(id: number){
-    this.http.get('http://155.158.2.29:4000/api/awards', id).subscribe(
-      res => {
-      },
-      err => {
-        return err;
-      }
-    )
+  getUserAdverts(): any {
+    const options = {
+      name: 'user_id',
+      value: JSON.parse(localStorage.getItem('currentUser')).user_id,
+    };
+    return Observable.create((observer: Observer<Response>) => {
+      this.http.get(`http://155.158.2.29:4000/api/awards?user_id=${options.value}`).subscribe(
+        res => {
+          observer.next(res);
+          observer.complete();
+        },
+        err => {
+          observer.next(err);
+          observer.complete();
+        }
+      )
+    });
   }
 
   public searchAdverts(data: any) {

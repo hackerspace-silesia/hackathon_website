@@ -16,20 +16,20 @@ export class HttpClientProvider {
 
   constructor(public http: Http) {}
 
-  private createOptions(ID?) {
+  private createOptions(opt?) {
     const token = JSON.parse(localStorage.getItem('currentUser')).token;
     this.headers.set('Authorization', `Bearer ${token}`);
-    this.headers.set('Content-Type', 'application/json')
+    this.headers.set('Content-Type', 'application/json');
     let options;
-    if(ID) {
+    if (opt) {
       let params: URLSearchParams = new URLSearchParams();
-      params.set('id', ID);
+      params.set(opt.name, opt.value)
       options = new RequestOptions({ headers: this.headers, search: params });
-      return options
-    } else {
-      options = new RequestOptions({ headers: this.headers });
       return options;
     }
+    options = new RequestOptions({ headers: this.headers });
+    return options;
+
   }
 
   private responseSuccess(observer: Observer<any>, response: Response) {
@@ -42,9 +42,9 @@ export class HttpClientProvider {
     observer.complete();
   }
 
-  get(url, getID?) {
+  get(url, options?) {
     return Observable.create((observer: Observer<Response>) => {
-      this.http.get(url, this.createOptions(getID)).subscribe
+      this.http.get(url, this.createOptions(options)).subscribe
       ((response) => {
         this.responseSuccess(observer, response)
       }, (error) => {
@@ -88,7 +88,7 @@ export class HttpClientProvider {
 
   delete(url, deleteID) {
     return Observable.create((observer: Observer<Response>) => {
-      this.http.delete(url, this.createOptions(deleteID)).subscribe
+      this.http.delete(url, this.createOptions()).subscribe
       ((response) => {
         this.responseSuccess(observer, response)
       }, (error) => {
