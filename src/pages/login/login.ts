@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { HomePage } from "../home/home";
+import { RegisterPage } from "../register/register";
 
 /**
  * Generated class for the LoginPage page.
@@ -19,6 +20,7 @@ export class LoginPage {
   email: string = '';
   password: string = '';
   error: string;
+  registerPage = RegisterPage;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,

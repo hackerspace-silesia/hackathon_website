@@ -9,7 +9,7 @@
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding text-center>
     <form (ngSubmit)="doLogin()">
       <ion-list>
         <ion-item>
@@ -24,8 +24,15 @@
           {{ error }}
         </div>
       </ion-list>
-      <button ion-button type="submit">
-        Zaloguj się
-      </button>
+      <div>
+        <button ion-button type="submit">
+          Zaloguj się
+        </button>
+      </div>
     </form>
+  <div>
+    <button ion-button [navPush]="registerPage">
+      Dołącz do nas
+    </button>
+  </div>
 </ion-content>
