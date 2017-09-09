@@ -39,7 +39,6 @@ export class NewAdvertPage {
   }
 
   createAdvert() {
-
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const data = {
       award: {

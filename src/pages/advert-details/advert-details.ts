@@ -15,11 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AdvertDetailsPage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
+  advert: object = {};
+  url: string = 'http://155.158.2.29:4000/uploads/';
+  imgUrl;
 
   ionViewDidLoad() {
-    console.log(this.navParams.get('advert'));
+    this.advert = this.navParams.data.advert;
+    console.log(this.navParams.data);
+    const avatar = this.navParams.get('advert').avatar;
+    this.imgUrl = avatar? `${this.url}${avatar.file_name}` : '';
   }
-
 }

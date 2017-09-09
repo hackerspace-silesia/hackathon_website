@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
+import { AccountDetailsPage } from "../pages/account-details/account-details";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,9 +18,11 @@ import { LandingPage } from "../pages/landing/landing";
 import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-service';
 import { HttpClientProvider } from '../providers/http-client/http-client';
 import { MainPipe } from "../pipes/main-pipe.module";
-import {AdvertDetailsPage} from "../pages/advert-details/advert-details";
 import { AddPhotoPage } from "../pages/add-photo/add-photo";
 import { NewAdvertPage } from "../pages/new-advert/new-advert";
+import { AdvertDetailsPage } from "../pages/advert-details/advert-details";
+import { MyAdvertsPage } from "../pages/my-adverts/my-adverts";
+import { UsersServiceProvider } from '../providers/users-service/users-service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { NewAdvertPage } from "../pages/new-advert/new-advert";
     LandingPage,
     AdvertDetailsPage,
     AddPhotoPage,
+    AccountDetailsPage,
+    MyAdvertsPage,
     NewAdvertPage
   ],
   imports: [
@@ -39,7 +44,6 @@ import { NewAdvertPage } from "../pages/new-advert/new-advert";
     ComponentsModule,
     HttpModule,
     MainPipe,
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,6 +55,8 @@ import { NewAdvertPage } from "../pages/new-advert/new-advert";
     LandingPage,
     AdvertDetailsPage,
     AddPhotoPage,
+    AccountDetailsPage,
+    MyAdvertsPage,
     NewAdvertPage
   ],
   providers: [
@@ -60,6 +66,7 @@ import { NewAdvertPage } from "../pages/new-advert/new-advert";
     AuthServiceProvider,
     AdvertsServiceProvider,
     HttpClientProvider,
+    UsersServiceProvider,
   ]
 })
 export class AppModule {}

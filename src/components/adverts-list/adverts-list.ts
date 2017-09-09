@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Advert } from '../../models/Advert';
 import { AdvertsServiceProvider } from "../../providers/adverts-service/adverts-service";
 
@@ -14,19 +14,13 @@ import { AdvertsServiceProvider } from "../../providers/adverts-service/adverts-
 })
 export class AdvertsListComponent implements OnInit{
 
-  adverts: Advert[];
+  @Input() adverts: Advert[];
   error: any;
   constructor(private advertsService: AdvertsServiceProvider) {
 
   }
   ngOnInit() {
-    this.advertsService.getAllAdverts().subscribe(
-      res => {
-        this.adverts = JSON.parse(res._body).data;
-      },
-      err => {
-        this.error = err;
-      }
-    );
+
   }
+
 }
