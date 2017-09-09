@@ -16,32 +16,49 @@
   <div *ngIf="registerSuccess" class="alert alert-success" role="alert">
     Rejestracja zakończona powodzeniem! Teraz poczekaj tylko na aktywację twojego konta.
   </div>
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    Type: {{ error.type }}
+    <br>
+    Message: {{ error.message }}
+  </div>
   <form (ngSubmit)="doRegister()">
     <ion-list>
       <ion-item>
         <ion-label>Email</ion-label>
-        <ion-input type="email" [ngModel]="email" (input)="email = $event.target.value" name="email"></ion-input>
+        <ion-input type="email"
+                   [ngModel]="email"
+                   (input)="email = $event.target.value"
+                   name="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Hasło</ion-label>
-        <ion-input type="password" [ngModel]="password" (input)="password = $event.target.value" name="password"></ion-input>
+        <ion-input type="password"
+                   [ngModel]="password"
+                   (input)="password = $event.target.value"
+                   name="password"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Imię</ion-label>
-        <ion-input type="text" [ngModel]="firstName" (input)="firstName = $event.target.value" name="firstName"></ion-input>
+        <ion-input type="text"
+                   [ngModel]="firstName"
+                   (input)="firstName = $event.target.value"
+                   name="firstName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Nazwisko</ion-label>
-        <ion-input type="text" [ngModel]="lastName" (input)="lastName = $event.target.value" name="lastName"></ion-input>
+        <ion-input type="text"
+                   [ngModel]="lastName"
+                   (input)="lastName = $event.target.value"
+                   name="lastName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>NIP Organizacji</ion-label>
-        <ion-input type="text" [ngModel]="nip" (input)="nip = $event.target.value" name="nip"></ion-input>
+        <ion-input type="text"
+                   [ngModel]="nip"
+                   (input)="nip = $event.target.value"
+                   name="nip"></ion-input>
       </ion-item>
     </ion-list>
-    <div *ngIf="error" class="alert alert-danger" role="alert">
-      {{ error }}
-    </div>
     <button ion-button type="submit">
       Zarejestruj się
     </button>
