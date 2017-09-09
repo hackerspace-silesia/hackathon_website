@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AdvertsServiceProvider } from "../../providers/adverts-service/adverts-service";
+import { NewAdvertPage } from "../new-advert/new-advert";
 
 
 @Component({
@@ -13,6 +14,7 @@ export class HomePage {
   }
   search: string = '';
   error: string = '';
+  newAdvertPage = NewAdvertPage;
 
   doSearch() {
     console.log('It works!');

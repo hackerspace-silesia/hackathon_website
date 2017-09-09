@@ -18,6 +18,8 @@ import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-ser
 import { HttpClientProvider } from '../providers/http-client/http-client';
 import { MainPipe } from "../pipes/main-pipe.module";
 import {AdvertDetailsPage} from "../pages/advert-details/advert-details";
+import { AddPhotoPage } from "../pages/add-photo/add-photo";
+import { NewAdvertPage } from "../pages/new-advert/new-advert";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {AdvertDetailsPage} from "../pages/advert-details/advert-details";
     LoginPage,
     RegisterPage,
     LandingPage,
-    AdvertDetailsPage
+    AdvertDetailsPage,
+    AddPhotoPage,
+    NewAdvertPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import {AdvertDetailsPage} from "../pages/advert-details/advert-details";
     LoginPage,
     RegisterPage,
     LandingPage,
-    AdvertDetailsPage
+    AdvertDetailsPage,
+    AddPhotoPage,
+    NewAdvertPage
   ],
   providers: [
     StatusBar,

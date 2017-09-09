@@ -19,7 +19,7 @@ export class AdvertDetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.navParams);
+    console.log(this.navParams.get('advert'));
   }
 
 }
