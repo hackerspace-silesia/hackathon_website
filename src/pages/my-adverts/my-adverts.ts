@@ -6,11 +6,9 @@ import { AdvertsServiceProvider } from "../../providers/adverts-service/adverts-
 
 /**
  * Generated class for the MyAdvertsPage page.
- *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-my-adverts',
@@ -22,7 +20,6 @@ export class MyAdvertsPage implements OnInit{
               public navParams: NavParams,
               private advertsService: AdvertsServiceProvider ) {
   }
-
   ngOnInit() {
     this.advertsService.getUserAdverts().subscribe(
       res => {

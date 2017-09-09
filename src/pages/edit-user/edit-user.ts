@@ -23,16 +23,13 @@ export class EditUserPage implements OnInit{
   };
   message: string;
   error: string;
-
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private userService: UsersServiceProvider ) {
   }
-
   ngOnInit() {
     this.user = this.navParams.data.user
   }
-
   edit() {
     console.log(this.user);
     this.userService.editUser({

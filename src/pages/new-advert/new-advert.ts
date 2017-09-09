@@ -29,11 +29,6 @@ export class NewAdvertPage {
               public navParams: NavParams,
               public advertsService: AdvertsServiceProvider) {
   }
-
-  ionViewDidLoad() {
-
-  }
-
   createAdvert() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
       const data = {

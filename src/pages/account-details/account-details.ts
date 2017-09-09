@@ -22,12 +22,10 @@ export class AccountDetailsPage implements OnInit{
     lastname: '',
     type: '',
   };
-
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public userService: UsersServiceProvider) {
   }
-
   ngOnInit() {
     this.userService.getUser().subscribe(
       res => {

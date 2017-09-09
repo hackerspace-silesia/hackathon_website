@@ -8,13 +8,10 @@ import { Advert } from "../../models/Advert";
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
-  constructor(public navCtrl: NavController, public advertsService: AdvertsServiceProvider) {
-
-  }
+  constructor(public navCtrl: NavController, public advertsService: AdvertsServiceProvider) {}
   search: string = '';
   error: string = '';
   adverts: Advert[];
-
   doSearch() {
     console.log('It works!');
     const data = {
@@ -25,7 +22,6 @@ export class HomePage implements OnInit{
       this.navCtrl.setRoot(HomePage, {}, { animate: true, direction: 'forward' });
     }
   }
-
   ngOnInit() {
     this.advertsService.getAllAdverts().subscribe(
       res => {

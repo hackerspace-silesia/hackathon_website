@@ -31,11 +31,6 @@ export class RegisterPage {
               private authService: AuthServiceProvider,
               public alertCtrl: AlertController) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
-  }
-
   doRegister(){
     const credentials = {
       user: {

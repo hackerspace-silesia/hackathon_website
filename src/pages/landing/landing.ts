@@ -20,11 +20,6 @@ export class LandingPage {
   registerPage = RegisterPage;
   loginPage = LoginPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LandingPage');
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
 }
