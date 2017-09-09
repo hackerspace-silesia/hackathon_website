@@ -22,6 +22,7 @@ export class RegisterPage {
   firstName: string = '';
   lastName: string = '';
   email: string = '';
+  nip: number = null;
   registerSuccess: boolean = false;
 
   constructor(public navCtrl: NavController,
@@ -40,7 +41,8 @@ export class RegisterPage {
         password: this.password,
         name: this.firstName,
         lastName: this.lastName,
-        email: this.email
+        email: this.email,
+        nip: this.nip
       }
     };
     this.authService.register(credentials)
@@ -51,6 +53,7 @@ export class RegisterPage {
           this.firstName = '';
           this.lastName = '';
           this.email = '';
+          this.nip = null;
         } else {
           this.error = 'Email lub hasło jest niepoprawne';
         }

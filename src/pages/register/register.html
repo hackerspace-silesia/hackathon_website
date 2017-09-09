@@ -34,6 +34,10 @@
         <ion-label>Nazwisko</ion-label>
         <ion-input type="text" [ngModel]="lastName" (input)="lastName = $event.target.value" name="lastName"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-label>NIP Organizacji</ion-label>
+        <ion-input type="text" [ngModel]="nip" (input)="nip = $event.target.value" name="nip"></ion-input>
+      </ion-item>
     </ion-list>
     <div *ngIf="error" class="alert alert-danger" role="alert">
       {{ error }}
