@@ -1,3 +1,4 @@
+
 <!--
   Generated template for the NewAdvertPage page.
 
@@ -14,5 +15,40 @@
 
 
 <ion-content padding>
-
+  <form (ngSubmit)="createAdvert()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Temat:</ion-label>
+        <ion-input type="text" [ngModel]="topic" (input)="topic = $event.target.value" name="topic"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Treść:</ion-label>
+        <ion-textarea [ngModel]="body" (input)="body = $event.target.value" name="body"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Wartość od:</ion-label>
+        <ion-input type="number" [ngModel]="value_from" (input)="value_from = $event.target.value" name="value_from"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Wartość do:</ion-label>
+        <ion-input type="number" [ngModel]="value_to" (input)="value_to = $event.target.value" name="value_to"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Miasto</ion-label>
+        <ion-input type="text" [ngModel]="city" (input)="city = $event.target.value" name="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Plik</ion-label>
+        <ion-input type="file" [ngModel]="avatar" (input)="avatar = $event.target.value" name="avatar"></ion-input>
+      </ion-item>
+      <div *ngIf="error" class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    </ion-list>
+    <div>
+      <button ion-button type="submit">
+        Dodaj ogłoszenie
+      </button>
+    </div>
+  </form>
 </ion-content>

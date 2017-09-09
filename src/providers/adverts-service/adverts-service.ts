@@ -56,4 +56,15 @@ export class AdvertsServiceProvider {
     )
   }
 
+  public createAdverts(data: object) {
+    console.log(data);
+    this.http.post('http://155.158.2.29:4000/api/awards', JSON.stringify(data)).subscribe(
+      res => {
+        return res.data;
+      },
+      err => {
+        return err;
+      }
+    )
+  }
 }

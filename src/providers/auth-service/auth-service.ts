@@ -30,8 +30,10 @@ export class AuthServiceProvider {
         let token = response.json() && response.json().token;
         if (token) {
           this.token = token;
+          console.log(response);
           localStorage.setItem('currentUser', JSON.stringify({
             username: credentials.login,
+            user_id: response.json().user.id,
             token,
           }));
           localStorage.setItem('settings', JSON.stringify( {
