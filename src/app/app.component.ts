@@ -4,11 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { LandingPage } from "../pages/landing/landing";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
+import { ExplorePage } from "../pages/explore/explore";
 
 @Component({
   templateUrl: 'app.html'
@@ -41,7 +41,7 @@ export class MyApp {
 
     this.pagesWhenLogged = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
+      { title: 'ExplorePage', component: ExplorePage },
     ];
   }
   initializeApp() {

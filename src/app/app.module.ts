@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 
@@ -14,15 +13,16 @@ import { ComponentsModule } from "../components/components.module";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { HttpModule } from "@angular/http";
 import { LandingPage } from "../pages/landing/landing";
+import { ExplorePage } from "../pages/explore/explore";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     RegisterPage,
-    LandingPage
+    LandingPage,
+    ExplorePage
   ],
   imports: [
     BrowserModule,
@@ -34,10 +34,10 @@ import { LandingPage } from "../pages/landing/landing";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     RegisterPage,
-    LandingPage
+    LandingPage,
+    ExplorePage
   ],
   providers: [
     StatusBar,
