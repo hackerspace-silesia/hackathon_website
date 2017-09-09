@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import validator from 'validator';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { HomePage } from "../home/home";
@@ -7,7 +6,6 @@ import { AlertController } from "ionic-angular";
 
 /**
  * Generated class for the RegisterPage page.
- *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
@@ -44,26 +42,26 @@ export class RegisterPage {
 
     if (this.password.length < 8) {
       this.error = {
-        type: 'Validation Error',
-        message: 'Minimal password lenght is 8',
+        type: 'Error',
+        message: 'Minimalna długość hasła to 8',
       };
       return
     } else if (this.firstName.length === 0) {
       this.error = {
-        type: 'Validation Error',
-        message: 'First name is required',
+        type: 'Error',
+        message: 'Imię jest wymagane',
       };
       return
     } else if (this.lastName.length === 0) {
       this.error = {
-        type: 'Validation Error',
-        message: 'Last name is required',
+        type: 'Error',
+        message: 'Nazwisko jest wymagane',
       };
       return;
     } else if (this.email.length === 0) {
       this.error = {
-        type: 'Validation Error',
-        message: 'Email is required',
+        type: 'Error',
+        message: 'Email jest wymagany',
       };
       return;
     } else {

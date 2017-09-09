@@ -16,9 +16,7 @@
     Rejestracja zakończona powodzeniem! Teraz poczekaj tylko na aktywację twojego konta.
   </div>
   <div *ngIf="error" class="alert alert-danger" role="alert">
-    Type: {{ error.type }}
-    <br>
-    Message: {{ error.message }}
+    Error: {{ error.message }}
   </div>
   <form (ngSubmit)="doRegister()">
     <ion-list>
