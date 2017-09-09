@@ -12,6 +12,7 @@ import { AccountDetailsPage } from "../pages/account-details/account-details";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import {MyAdvertsPage} from "../pages/my-adverts/my-adverts";
 import {NewAdvertPage} from "../pages/new-advert/new-advert";
+import {ExplorePage} from "../pages/explore/explore";
 
 @Component({
   templateUrl: 'app.html'
@@ -37,9 +38,9 @@ export class MyApp {
     this.initializeApp();
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Login', component: LoginPage },
-      { title: 'Register', component: RegisterPage },
-      { title: 'LandingPage', component: LandingPage }
+      { title: 'Logowanie', component: LoginPage },
+      { title: 'Rejestracja', component: RegisterPage },
+      { title: 'Witam!', component: LandingPage }
     ];
 
     this.pagesWhenLogged = [
@@ -47,6 +48,7 @@ export class MyApp {
       { title: 'Dodaj nowe ogłoszenie', component: NewAdvertPage },
       { title: 'Szczegóły konta', component: AccountDetailsPage },
       { title: 'Moje ogłoszenia', component: MyAdvertsPage },
+      { title: 'ESTablica', component: ExplorePage }
     ];
   }
   initializeApp() {

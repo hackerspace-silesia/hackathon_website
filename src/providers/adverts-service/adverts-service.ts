@@ -63,8 +63,13 @@ export class AdvertsServiceProvider {
   }
 
   public createAdverts(data: object) {
+    let formData = new FormData();
+    for(let key of Object.keys(data)) {
+      formData.append(key, data[key]);
+    }
+
     return Observable.create((observer: Observer<Response>) => {
-      this.http.post('http://155.158.2.29:4000/api/awards', JSON.stringify(data)).subscribe(
+      this.http.post('http://155.158.2.29:4000/api/awards', formData).subscribe(
         res => {
           observer.next(res);
           observer.complete();

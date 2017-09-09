@@ -8,7 +8,6 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { AccountDetailsPage } from "../pages/account-details/account-details";
-import { NewAdvertPage } from "../pages/new-advert/new-advert";
 import { EditUserPage } from "../pages/edit-user/edit-user";
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,9 +19,12 @@ import { LandingPage } from "../pages/landing/landing";
 import { AdvertsServiceProvider } from '../providers/adverts-service/adverts-service';
 import { HttpClientProvider } from '../providers/http-client/http-client';
 import { MainPipe } from "../pipes/main-pipe.module";
+import { AddPhotoPage } from "../pages/add-photo/add-photo";
+import { NewAdvertPage } from "../pages/new-advert/new-advert";
 import { AdvertDetailsPage } from "../pages/advert-details/advert-details";
 import { MyAdvertsPage } from "../pages/my-adverts/my-adverts";
 import { UsersServiceProvider } from '../providers/users-service/users-service';
+import { ExplorePage } from "../pages/explore/explore";
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { UsersServiceProvider } from '../providers/users-service/users-service';
     RegisterPage,
     LandingPage,
     AdvertDetailsPage,
+    AddPhotoPage,
     AccountDetailsPage,
     MyAdvertsPage,
     NewAdvertPage,
-    EditUserPage
+    EditUserPage,
+    ExplorePage
   ],
   imports: [
     BrowserModule,
@@ -54,10 +58,12 @@ import { UsersServiceProvider } from '../providers/users-service/users-service';
     RegisterPage,
     LandingPage,
     AdvertDetailsPage,
+    AddPhotoPage,
     AccountDetailsPage,
     MyAdvertsPage,
     NewAdvertPage,
-    EditUserPage
+    EditUserPage,
+    ExplorePage
   ],
   providers: [
     StatusBar,

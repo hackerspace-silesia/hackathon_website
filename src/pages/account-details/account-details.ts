@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersServiceProvider } from "../../providers/users-service/users-service";
 import { User } from "../../models/User";
-import {EditUserPage} from "../edit-user/edit-user";
+import { EditUserPage } from "../edit-user/edit-user";
 /**
  * Generated class for the AccountDetailsPage page.
  *
