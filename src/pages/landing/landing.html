@@ -1,0 +1,32 @@
+<ion-header>
+
+    <ion-toolbar text-center>
+      <img src="../../assets/img/logo.png" alt="logo" class="logo">
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding class="content-wrapper">
+
+  <div class="banner">banner here</div>
+
+  <h1 class="main-header" text-center margin-vertical>Witamy serdecznie na Es Tablica</h1>
+  <h3 margin-vertical text-center>Serwis przeznaczony jest dla zarejstrowanych użytkowników.</h3>
+
+  <ion-grid>
+
+    <ion-row>
+      <h3>O nas</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, in? Nostrum magnam quidem eius commodi alias eos. Eligendi natus perferendis ipsam veritatis reiciendis. Molestias quibusdam reprehenderit alias soluta dignissimos eius?</p>
+    </ion-row>
+
+    <ion-row justify-content-center margin-vertical>
+      <button ion-button round small color="secondary" [navPush]="loginPage">Zaloguj sie</button>
+    </ion-row>
+
+    <ion-row  margin-vertical justify-content-center margin-vertical>
+      <button ion-button round [navPush]="registerPage">Dolacz do nas</button>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
